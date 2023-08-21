@@ -22,20 +22,30 @@ const createData = async(req,res) => {
         })
     }
 }
-//FUNCTION FOR GETTING THE DATA
 
-const getData =  async(req, res) => {
-
-        const data = await dataModel.findById(req.params.id)
-        if(data){
+    // Add this function for searching data by name
+const searchDataByName = async (req, res) => {
+    const awb = req.body.awb
+    try {
+        const data = await dataModel.findOne({ awb: awb })
+        if (data) {
             res.send(data)
-        }
-        else{
+        } else {
             res.send({
-                message:"Cannot find data"
+                message: "Cannot find data with the given name."
             })
         }
+    } catch (err) {
+        res.send({
+            message: err.message,
+            status: 0
+        })
     }
+}
+
+// Add this route for searching data by name
+
+
 
 const deleteData = async(req, res) => {
     const data = await dataModel.findById(req.params.id)
@@ -53,8 +63,9 @@ const deleteData = async(req, res) => {
     }
 }
 
-dataRoute.route("/data/:id").get(getData)
+
+dataRoute.route("/data/search").get(searchDataByName)
 dataRoute.route("/data").post(createData)
-dataRoute.route("/data/:id").delete(deleteData)
+dataRoute.route("/data/search").delete(deleteData)
 
 export default dataRoute
