@@ -33,15 +33,15 @@ const dataSchema = mongoose.Schema({
     },
     photo1:{
         type:"String",
-        required:true
+        required:false
     },
     photo2:{
         type:"String",
-        required:true
+        required:false
     },
     video:{
         type:"String",
-        required:true
+        required:false
     }
 })
 
