@@ -2,16 +2,16 @@ import mongoose from "mongoose";
 
 const dataSchema = mongoose.Schema({
     awb:{
-        type:"number",
+        type:"String",
         required:true,
         unique:true
     },
     firmname:{
-        type:"string",
+        type:"String",
         required:true
     },
     suborder_id:{
-        type:"number",
+        type:"String",
         required:true
 
     },
@@ -28,7 +28,7 @@ const dataSchema = mongoose.Schema({
         required:true
     },
     qty:{
-        type:"number",
+        type:"String",
         required:true
     },
     photo1:{
