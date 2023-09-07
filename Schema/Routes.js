@@ -92,7 +92,7 @@ const editData = async (req, res) => {
 dataRoute.route("/data/:id").put(editData);
 
 
-dataRoute.route("/data/search").get(searchDataByName)
+dataRoute.route("/data/search").post(searchDataByName)
 dataRoute.route("/data").post(createData)
 dataRoute.route("/data/search").delete(deleteData)
 
