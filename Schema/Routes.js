@@ -95,6 +95,5 @@ dataRoute.route("/data/:id").put(editData);
 dataRoute.route("/data/search").post(searchDataByName)
 dataRoute.route("/data").post(createData)
 dataRoute.route("/data/search").delete(deleteData)
-dataRoute.route("/data/edit:id").post(editData)
 
 export default dataRoute
