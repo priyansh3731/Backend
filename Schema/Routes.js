@@ -83,7 +83,6 @@ const editData = async (req, res) => {
         }
     } catch (error) {
         res.status(500).json({
-            repo:dataId,
             message: error.message,
             status: 0
         });
