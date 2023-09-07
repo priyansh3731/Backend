@@ -27,7 +27,7 @@ const createData = async(req,res) => {
 const searchDataByName = async (req, res) => {
     const awb = req.body.awb
     try {
-        const data = await dataModel.findOne({ "awb": awb })
+        const data = await dataModel.findOne({ awb: awb })
         if (data) {
             res.send(data)
         } else {
