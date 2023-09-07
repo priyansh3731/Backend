@@ -32,7 +32,7 @@ const searchDataByName = async (req, res) => {
             res.send(data)
         } else {
             res.send({
-                message: "Cannot find data with the given name."+typeof(awb)
+                message: "Cannot find data with the given name."+awb
             })
         }
     } catch (err) {
