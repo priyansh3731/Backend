@@ -63,6 +63,34 @@ const deleteData = async(req, res) => {
     }
 }
 
+//data for editing user
+const editData = async (req, res) => {
+    try {
+        const dataId = req.params.id;
+        const updates = req.body; // This should contain the updated user data
+
+        const updatedData = await dataModel.findByIdAndUpdate(dataId, updates, { new: true });
+
+        if (updatedData) {
+            res.json({
+                message: "Data updated successfully",
+                data: updatedData
+            });
+        } else {
+            res.status(404).json({
+                message: "Data not found"
+            });
+        }
+    } catch (error) {
+        res.status(500).json({
+            message: error.message,
+            status: 0
+        });
+    }
+};
+
+dataRoute.route("/data/:id").put(editData);
+
 
 dataRoute.route("/data/search").get(searchDataByName)
 dataRoute.route("/data").post(createData)

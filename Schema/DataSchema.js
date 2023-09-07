@@ -30,6 +30,15 @@ const dataSchema = mongoose.Schema({
     qty:{
         type:"number",
         required:true
+    },
+    photo1:{
+        type:"String"
+    },
+    photo2:{
+        type:"String"
+    },
+    video:{
+        type:"String"
     }
 })
 
