@@ -1,8 +1,10 @@
 import express  from "express";
 import dataModel from "./DataSchema.js";
+import cors from "cors"
 
 //DATA ROUTER FOR ROUTING
 const dataRoute = express.Router()
+app.use(cors());
 
 //FUNCTION FOR CREATING DATA
 const createData = async(req,res) => {
