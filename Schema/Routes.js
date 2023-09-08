@@ -4,7 +4,9 @@ import cors from "cors"
 
 //DATA ROUTER FOR ROUTING
 const dataRoute = express.Router()
-app.use(cors());
+const app = express();
+
+app.use(cors())
 
 //FUNCTION FOR CREATING DATA
 const createData = async(req,res) => {
