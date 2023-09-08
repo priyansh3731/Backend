@@ -7,7 +7,9 @@ const dataRoute = express.Router()
 const app = express();
 
 app.use(express.json())
-app.use(cors());
+app.use(cors({
+    origin:"http://localhost:5173/"
+}));
 
 //FUNCTION FOR CREATING DATA
 const createData = async(req,res) => {
