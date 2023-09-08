@@ -1,18 +1,10 @@
 import express  from "express";
 import dataModel from "./DataSchema.js";
-import cors from "cors"
 
 //DATA ROUTER FOR ROUTING
 const dataRoute = express.Router()
 const app = express();
 
-app.use(express.json())
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://grumpy-jacket-lamb.cyclic.app');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-  });
 
 //FUNCTION FOR CREATING DATA
 const createData = async(req,res) => {
