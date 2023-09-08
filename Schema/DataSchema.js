@@ -32,15 +32,15 @@ const dataSchema = mongoose.Schema({
         required:true
     },
     photo1:{
-        type:"Binary",
+        type:"string",
         required:false
     },
     photo2:{
-        type:"Binary",
+        type:"string",
         required:false
     },
     video:{
-        type:"Binary",
+        type:"string",
         required:false
     }
 })
