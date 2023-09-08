@@ -40,7 +40,7 @@ const dataSchema = mongoose.Schema({
         required:false
     },
     video:{
-        type:"string",
+        type:"text",
         required:false
     }
 })
