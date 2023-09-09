@@ -1,24 +1,24 @@
 import express  from "express";
 import dataModel from "./DataSchema.js";
-import cors from "cors"
+// import cors from "cors"
 
-//DATA ROUTER FOR ROUTING
-const dataRoute = express.Router()
-const app = express();
-const fileUpload = require("express-fileupload")
+// //DATA ROUTER FOR ROUTING
+// const dataRoute = express.Router()
+// const app = express();
+// const fileUpload = require("express-fileupload")
 
-app.use(cors())
-app.use(fileUpload({
-    useTempFiles:true
-}))
+// app.use(cors())
+// app.use(fileUpload({
+//     useTempFiles:true
+// }))
 
-const cloudinary = require("cloudinary").v2
+// const cloudinary = require("cloudinary").v2
           
-cloudinary.config({ 
-  cloud_name: 'dabaj1pou', 
-  api_key: '566886352864217', 
-  api_secret: 'wIxwUBkeghz1KrVbYLI497Ivs7A' 
-});
+// cloudinary.config({ 
+//   cloud_name: 'dabaj1pou', 
+//   api_key: '566886352864217', 
+//   api_secret: 'wIxwUBkeghz1KrVbYLI497Ivs7A' 
+// });
 
 
 //FUNCTION FOR CREATING DATA
