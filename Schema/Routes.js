@@ -5,8 +5,12 @@ import cors from "cors"
 //DATA ROUTER FOR ROUTING
 const dataRoute = express.Router()
 const app = express();
+const fileUpload = require("express-fileupload")
 
 app.use(cors())
+app.use(fileUpload({
+    useTempFiles:true
+}))
 
 const cloudinary = require("cloudinary").v2
           
