@@ -5,6 +5,8 @@ import dataModel from "./DataSchema.js";
 const dataRoute = express.Router()
 const app = express();
 
+app.use(cors())
+
 const cloudinary = require("cloudinary").v2
           
 cloudinary.config({ 
