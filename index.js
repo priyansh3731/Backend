@@ -4,10 +4,12 @@ import cors from "cors"
 import connectDB from "./db.js"
 import dataRoute from "./Schema/Routes.js"
 
+
 dotenv.config()
 connectDB()
 
 const app = express()
+
 
 app.use(express.json())
 app.use(cors())

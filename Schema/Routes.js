@@ -5,6 +5,14 @@ import dataModel from "./DataSchema.js";
 const dataRoute = express.Router()
 const app = express();
 
+const cloudinary = require("cloudinary").v2
+          
+cloudinary.config({ 
+  cloud_name: 'dabaj1pou', 
+  api_key: '566886352864217', 
+  api_secret: 'wIxwUBkeghz1KrVbYLI497Ivs7A' 
+});
+
 
 //FUNCTION FOR CREATING DATA
 const createData = async(req,res) => {
@@ -70,6 +78,19 @@ const editData = async (req, res) => {
     try {
         const dataId = req.params.id;
         const updates = req.body; // This should contain the updated user data
+
+        const file1 = req.files.photo1;
+        cloudinary.uploader.upload(file1.tempFilePath,(err,result)=>{
+        updates.photo1 = result.url;
+        })
+        const file2 = req.files.photo1;
+        cloudinary.uploader.upload(file2.tempFilePath,(err,result)=>{
+        updates.photo2 = result.url;
+        })
+        const file3 = req.files.photo1;
+        cloudinary.uploader.upload(file3.tempFilePath,(err,result)=>{
+        updates.video = result.url;
+        })
 
         const updatedData = await dataModel.findByIdAndUpdate(dataId, updates, { new: true });
 

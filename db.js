@@ -1,5 +1,11 @@
 import mongoose from "mongoose";
-import  dotenv  from "dotenv"
+import  dotenv  from "dotenv";
+const fileUpload = require("express-fileupload")
+
+app.use(fileUpload({
+    useTempFiles:true
+}))
+
 
 const connectDB = async() => {
     try{
