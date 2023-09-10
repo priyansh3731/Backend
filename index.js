@@ -7,7 +7,7 @@ import dataRoute from "./Schema/Routes.js"
 
 dotenv.config()
 connectDB()
-// const fileUpload = require("express-fileupload")
+const fileUpload = require("express-fileupload")
 
 const app = express()
 app.use(express.json())
