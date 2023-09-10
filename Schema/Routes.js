@@ -7,7 +7,16 @@ const dataRoute = express.Router()
 const app = express();
 
 
-app.use(cors())
+const corsOptions = {
+    origin: '*', // Allow requests from any origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Allow cookies and authentication headers
+  };
+  
+  app.use(cors(corsOptions));
+  app.options('*', cors(corsOptions));
+
+  
 
 
 const cloudinary = require("cloudinary").v2
