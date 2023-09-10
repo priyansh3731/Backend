@@ -5,10 +5,15 @@ import connectDB from "./db.js"
 import dataRoute from "./Schema/Routes.js"
 
 
+const fileUpload = require("express-fileupload")
+
 dotenv.config()
 connectDB()
 
 const app = express()
+app.use(fileUpload({
+    useTempFiles:true
+}))
 app.use(cors())
 
 
