@@ -10,7 +10,14 @@ connectDB()
 
 const app = express()
 app.use(express.json())
-app.use(cors())
+const corsOptions = {
+    origin: '*', // Allow requests from any origin
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Allow cookies and authentication headers
+  };
+  
+  app.use(cors(corsOptions));
+  
 
 const port = process.env.PORT || 5000
 
