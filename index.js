@@ -5,17 +5,12 @@ import connectDB from "./db.js"
 import dataRoute from "./Schema/Routes.js"
 
 
-const fileUpload = require("express-fileupload")
-
 dotenv.config()
 connectDB()
 
 const app = express()
 app.use(express.json())
 app.use(cors())
-// app.use(fileUpload({
-//     useTempFiles:true
-// }))
 
 const port = process.env.PORT || 5000
 
