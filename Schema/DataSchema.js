@@ -11,7 +11,7 @@ const dataSchema = mongoose.Schema({
         required:true
     },
     suborder_id:{
-        type:"number",
+        type:"string",
         required:true
 
     },
