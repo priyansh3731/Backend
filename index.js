@@ -13,9 +13,9 @@ connectDB()
 const app = express()
 app.use(express.json())
 app.use(cors())
-app.use(fileUpload({
-    useTempFiles:true
-}))
+// app.use(fileUpload({
+//     useTempFiles:true
+// }))
 
 const port = process.env.PORT || 5000
 
