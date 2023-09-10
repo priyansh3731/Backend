@@ -1,13 +1,13 @@
 import express  from "express";
 import dataModel from "./DataSchema.js";
-// import cors from "cors"
+import cors from "cors"
 
 // //DATA ROUTER FOR ROUTING
-// const dataRoute = express.Router()
-// const app = express();
+const dataRoute = express.Router()
+const app = express();
 // const fileUpload = require("express-fileupload")
 
-// app.use(cors())
+app.use(cors())
 // app.use(fileUpload({
 //     useTempFiles:true
 // }))
