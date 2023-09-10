@@ -16,17 +16,6 @@ const corsOptions = {
   app.use(cors(corsOptions));
   app.options('*', cors(corsOptions));
 
-  
-
-
-const cloudinary = require("cloudinary").v2
-          
-cloudinary.config({ 
-  cloud_name: 'dabaj1pou', 
-  api_key: '566886352864217', 
-  api_secret: 'wIxwUBkeghz1KrVbYLI497Ivs7A' 
-});
-
 
 //FUNCTION FOR CREATING DATA
 const createData = async(req,res) => {
