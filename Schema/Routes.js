@@ -106,6 +106,8 @@ const editData = async (req, res) => {
 const AllData = async (req, res) => {
     try {
         const data = await dataModel.find({}).toArray()
+
+        console.log(data)
         if (data) {
             res.send(data)
         } else {
