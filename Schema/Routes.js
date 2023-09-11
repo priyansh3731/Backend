@@ -102,9 +102,27 @@ const editData = async (req, res) => {
     }
 };
 
+
+const AllData = async (req, res) => {
+    try {
+        const data = await dataModel.find({})
+        if (data) {
+            res.send(data)
+        } else {
+            res.send({
+                message: "Cannot find data with the given name."
+            })
+        }
+    } catch (err) {
+        res.send({
+            message: err.message,
+            status: 0
+        })
+    }
+}
+
+dataRoute.route("/data").get(AllData)
 dataRoute.route("/data/:id").put(editData);
-
-
 dataRoute.route("/data/search").post(searchDataByName)
 dataRoute.route("/data").post(createData)
 dataRoute.route("/data/search").delete(deleteData)
