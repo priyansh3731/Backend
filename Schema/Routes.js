@@ -19,7 +19,7 @@ const corsOptions = {
 
 //FUNCTION FOR CREATING DATA
 const createData = async(req,res) => {
-    const { awb,firmname,suborder_id,returnType,sku,category,qty,photo1,photo2,video } = req.body
+    const { awb,firmname,suborder_id,returnType,sku,category,qty,Barcode_id,photo1,photo2,photo3,video } = req.body
     try{
         let data = new dataModel({awb,firmname,suborder_id,returnType,sku,category,qty,photo1,photo2,video})
         await data.save()

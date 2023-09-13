@@ -31,11 +31,19 @@ const dataSchema = mongoose.Schema({
         type:"number",
         required:true
     },
+    Barcode_id:{
+        type:"string",
+        required:false
+    },
     photo1:{
         type:"string",
         required:false
     },
     photo2:{
+        type:"string",
+        required:false
+    },
+    photo3:{
         type:"string",
         required:false
     },
