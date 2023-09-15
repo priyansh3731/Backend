@@ -61,7 +61,7 @@ const searchDataByName = async (req, res) => {
 
 
 const deleteData = async(req, res) => {
-    const data = await dataModel.findById(req.params.id)
+    const data = await dataModel.findById(req.body.id)
 
     if(data){
         await dataModel.deleteOne({_id:data._id})
