@@ -50,6 +50,10 @@ const dataSchema = mongoose.Schema({
     video:{
         type:"string",
         required:false
+    },
+    date:{
+        type:"date",
+        required:false
     }
 })
 
